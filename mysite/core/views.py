@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from django.shortcuts import redirect
-
+from django.shortcuts import render, HttpResponse
 from .forms import GenerateRandomUserForm
 from .tasks import create_random_user_accounts
 
@@ -23,3 +23,8 @@ class GenerateRandomUserView(FormView):
         create_random_user_accounts.delay(total)
         messages.success(self.request, 'We are generating your random users! Wait a moment and refresh this page.')
         return redirect('users_list')
+
+
+def myview(request):
+    create_random_user_accounts.delay(2)
+    return HttpResponse('hello')
