@@ -26,5 +26,5 @@ class GenerateRandomUserView(FormView):
 
 
 def myview(request):
-    mitasc.delay(2)
+    mitasc.delay()
     return HttpResponse('hello')
