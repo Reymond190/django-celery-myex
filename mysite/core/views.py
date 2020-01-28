@@ -6,7 +6,7 @@ from django.views.generic.edit import FormView
 from django.shortcuts import redirect
 from django.shortcuts import render, HttpResponse
 from .forms import GenerateRandomUserForm
-from .tasks import create_random_user_accounts
+from .tasks import create_random_user_accounts,mitasc
 
 
 class UsersListView(ListView):
@@ -26,5 +26,5 @@ class GenerateRandomUserView(FormView):
 
 
 def myview(request):
-    create_random_user_accounts.delay(2)
+    mitasc.delay(2)
     return HttpResponse('hello')
