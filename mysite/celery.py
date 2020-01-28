@@ -6,4 +6,6 @@ app = Celery('mysite')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 
-app.autodiscover_tasks()
+
+from mysite.core.tasks import create_random_user_accounts
+app.autodiscover_tasks(create_random_user_accounts)
