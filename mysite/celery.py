@@ -8,4 +8,4 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 
 # from mysite.core.tasks import create_random_user_accounts
-app.autodiscover_tasks()
+app.autodiscover_tasks(task)

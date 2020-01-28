@@ -1,33 +1,34 @@
-# Django Celery Example
+# Django Celery  - Models save
 
-Example used in the blog post [How to Use Celery and RabbitMQ with Django](https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html?utm_source=github&utm_medium=repository)
-
-## Running Locally
-
+### Run Locally
+Works fine with recent versions of django and celery.
 ```bash
-git clone https://github.com/sibtc/django-celery-example.git
+git clone https://github.com/Reymond190/django-celery-myex.git
 ```
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
-```bash
+```
+python manage.py makemigrations
+```
+
+```
 python manage.py migrate
 ```
 
-```bash
+```
 python manage.py runserver
 ```
 
-```bash
+```
 celery -A mysite worker -l info
 ```
 
-Make sure you have RabbitMQ service running.
+Check whether rabbitmq is running 
 
-```bash
+```
 rabbitmq-server
 ```
 
-For more info see the Blog post.
